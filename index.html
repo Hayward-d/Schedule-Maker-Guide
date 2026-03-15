@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Schedule Maker Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="top-banner">
+  <div class="banner-left">
+    <a href="https://www.ducktechtive.com" target="_blank"><img src="images/logo.png" alt="Logo" class="logo"></a>
+
+  </div>
+
+  <div class="banner-center">
+    <label for="searchInput"></label>
+    <input type="search" name="searchInput" id="searchInput" autocomplete="search" placeholder="Search the guide..."/>
+    <div id="searchResults" class="search-results"></div>
+  </div>
+
+  <div class="banner-right">
+    <div class="content-dropdown">
+      <button class="content-btn">Contents ▼</button>
+      <div class="content-menu">
+        <a href="#intro">Introduction Video</a>
+        <hr class="content-line">
+        <a href="#section1">Getting Started</a>
+        <hr class="content-line">
+        <a href="#section2">Adding Locations</a>
+        <hr class="content-line">
+        <a href="#section3">Adding Employees</a>
+        <hr class="content-line">
+        <a href="#section4">Editing the District Manager Schedule</a>
+        <hr class="content-line">
+        <a href="#section5">Creating or Editing an Employee's Default Schedule</a>
+        <hr class="content-line">
+        <a href="#section6">Editing the Weekday Default Schedules</a>
+        <hr class="content-line">
+        <a href="#section7">Settings</a>
+        <hr class="content-line">
+        <a href="#section8">Warnings</a>
+        <hr class="content-line">
+        <a href="#section9">Editing / Deleting Locations</a>
+        <hr class="content-line">
+        <a href="#section10">Editing / Deleting Employees</a>
+        <hr class="content-line">
+        <a href="#section11">Editing the Schedule Order</a>
+        <hr class="content-line">
+        <a href="#section12">Editing the Schedule</a>
+        <hr class="content-line">
+        <a href="#section13">Exporting the Schedule</a>
+        <hr class="content-line">
+        <a href="#section14">Updating the Schedule / Making New Schedule Versions</a>
+        <hr class="content-line">
+        <a href="#section15">Viewing Employee & Location Hours</a>
+        <hr class="content-line">
+
+        <a href="#updates">Change Log</a>
+      </div>
+    </div>
+
+    <a href="files/Schedule Maker.xlsm" download="Schedule Maker v1.0.0" class="download-btn"></a>
+  </div>
+</header>
+
+<div class="banner-subbar"><span>This Guide is for Schedule Maker Version 1.0.0.</span></div>
+
+<section class="landing">
+  <picture>
+    <source
+      media="(orientation: landscape)"
+      srcset="images/landing.png"
+      class="landing-bg">
+    <source
+      media="(orientation: portrait)"
+      srcset="images/mobile-landing.jpg"
+      class="landing-bg">
+    <img src="images/landing.webp" alt="Landing Image" class="landing-bg">
+  </picture>
+  <div class="intro landing-content">
+    <h1>Excel Schedule Maker Guide</h1>
+    <p>Learn how to use the scheduling workbook step by step. Use search, contents, or jump directly into any section.</p>
+  </div>
+</section>
+
+<main>
+  <section id="intro" class="guide-section">
+    <button class="section-header">
+      <span class="arrow">▶</span>
+      Introduction Video
+    </button>
+    <div class="section-content">
+      <hr>
+      <p>Coming Soon...</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/K4TOrB7at0Y?si=me-R-MF8MfaGHeKm" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <hr>
+    </div>
+  </section>
+
+  <section id="section1" class="guide-section">
+    <button class="section-header">
+      <span class="arrow">▶</span>
+      Getting Started
+    </button>
+    <div class="section-content">
+      <hr>
+      <p>This section will guide you through the starting steps to get the schedule maker up and running for your district's schedule.</p>
+      <p>When you first open the Schedule Maker Excel file, make sure to enable content. After doing so, you will be prompted to begin the <b>Getting Started</b> process. Click <b>Yes</b> to continue.</p>
+      <b>You will need ample time to successfully complete this process. Quiting in the middle of this process will require you to complete it manually later.</b>
+      <p>After selecting <b>Yes</b> you will be presented with the main setup menu. This menu is designed to be intuitive and will guide you through the required initial information for your district.</p>
+      <p>In this menu, you must enter the following information in the corresponding fields:</p>
+      <!--<img src="images/section1/photo1.png" alt="Getting Started"> -->
+      <ul>
+        <li><b>District Number</b></li>
+        <li><b>District Manager's Name</b></li>
+        <li><b>Number of Locations in the District</b></li>
+        <li><b>Number of Employees in the District</b></li>
+      </ul>
+      <p>Please ensure this information is entered correctly before continuing. If any details are entered incorrectly, they <b>can be edited later</b> after the Getting Started process is complete.</p>
+      <p>Once all required fields are filled out, select <b>Submit</b> to continue.</p>
+      <p class="subtitle">Entering a Date</p>
+      <p>After clicking <b>Submit</b>, you will be asked to enter a date of the Week. The schedule will automatically set the dates for the week based on the date you enter.</p>
+      <p>For accuracy, the date <b>must be formatted as '01/01/2000'</b>.</p>
+      <p>The date for the week <b>can always be edited later</b>.</p>
+      <p class="subtitle">Adding Locations</p>
+      <p>Next, you will be guided through a series of menus to add your district's locations <b>one at a time</b>. Each location will be added individually to ensure accuracy.</p>
+      <p>For detailed instructions, see the <b><a class="section-link" href="#section2:adding-locations-jump">Adding Locations</a></b> section of this guide.</p>
+      <p class="subtitle">Adding Employees<p>
+      <p>After all locations have been added, you will be prompted to add employees, again <b>one at a time</b>. This step ensures that each employee is properly added and can have a default schedule made using the newly added locations.</p>
+      <p>For detailed instructions, see the <b><a class="section-link" href="#section3:adding-employees-jump">Adding Employees</a></b> section of this guide.</p>
+      <p class="subtitle">District Manager's Schedule</p>
+      <p>After all locations and employees have been added, the final screen will display the <b>District Manager Schedule</b> window.</p>
+      <p>Here, you will set the District Manager's schedule to complete the initial setup process.</p>
+      <p>For detailed instructions, see the <b><a class="section-link" href="#section4:district-manager-schedule-jump">Editing the District Manager Schedule</a></b> section of this guide.</p>
+      <p class="subtitle">Preferred Settings<p>
+      <p>After completing the District Manager's schedule, you will be prompted to set your <b>preferred settings</b>.</p>
+      <p>A settings menu will appear, allowing you to configure how the Schedule Maker behaves by default. The following options are available:</p>
+      <ul>
+        <li><b>Default PTO Hours Amount</b></li>
+        <li><b>District Number</b></li>
+        <li><b>Update DM Schedule w/ Export</b></li>
+        <em> - (On or Off — Off by default)</em>
+        <li><b>Reset Warnings With Date</b></li>
+        <em> - (On or Off — On by default)</em>
+        <li><b>Autopopulate Schedule Editor</b></li>
+        <em> - (On or Off — On by default)</em>
+        <li><b>Value for Autopopulate</b></li>
+        <ul>
+          <li>Current Schedule <em>(default)</em></li>
+          <li>Employee Defaults</li>
+          <li>Weekday Defaults</li>
+        </ul>
+        <li><b>Schedule Color Theme</b></li>
+      </ul>
+      <p>Each of these settings controls default behaviors and visual preferences within the Schedule Maker.</p>
+      <p>Full explanations for each option can be found in the <b><a class="section-link" href="#section7:settings-jump">Settings</a></b> section of this guide.</p>
+      <p class="subtitle">Saving Settings</p>
+      <p>After selecting your preferred options, click the <b>Save</b> button.</p>
+      <p>You will be prompted to confirm your selection, as saving will <b>overwrite any existing settings</b>. Select <b>Yes</b> to apply and save the new settings.</p>
+      <i><b class="side-note">Side Note:</b> Clicking the <b>Close</b> button will close the menu without changing any of the default settings.</i>
+      <p class="subtitle">Completion</p>
+      <p>Once settings are saved, the <b>Getting Started process is complete</b> and the Schedule Maker is fully ready for use.</p>
+    </div>
+  </section>
+
+  <section id="section2" class="guide-section">
+    <button class="section-header">
+      <span class="arrow">▶</span>
+      Adding Locations
+    </button>
+    <div class="section-content">
+      <hr>
+      <p>This section covers how to add locations after you have completed the <b><a class="section-link" href="#section1">Getting Started</a></b> process.</p>
+      <p class="subtitle">Opening the Add Location Menu</p>
+      <ol>
+        <li>In the top-left corner of the Excel sheet, click the <b>Additional Options</b> button.</li>
+        <li>An options menu will appear.</li>
+        <li>Select <b>Add New Location</b>.</li>
+      </ol>
+      <p class="subtitle" id="adding-locations-jump">Entering Location Information</p>
+      <p>After selecting <b>Add New Location</b>, a location setup menu will be displayed.</p>
+      <p>In this menu, you will enter the following information:</p>
+      <ul>
+        <li><b>Location Name</b></li>
+        <li><b>Permitted Hours per Week</b></li>
+        <li><b>Days the Location is Open</b></li>
+        <li><b>Number of Open Hours per Day</b></li>
+      </ul>
+      <p>By default, the menu will typically be pre-filled with <b><a class="sub-link" href="https://www.atlanticselfstorage.com" target="_blank">Atlantic Self Storage</a></b>'s standard operating days and hours. These values can be adjusted if the location has unique operating hours.</p>
+      <p class="subtitle">Important Rules and Validation<p>
+      <p>Please note the following requirements when entering location information:</p>
+      <ul>
+        <li><b>Location names must be unique</b> and cannot match the name of any existing location or employee.</li>
+        <li><b>Special characters are not allowed</b> in location names.</li>
+        <li><b>Permitted hours per week must exceed the total number of open hours</b> for the location each week.</li>
+      </ul>
+      <p>If any of these conditions are not met, the location will not be saved.</p>
+      <p class="subtitle">Saving the Location</p>
+      <p>Once all required information has been entered and verified, click the <b>Save Location</b> button to finish adding the location.</p>
+      <p>The location will then be available for scheduling and employee assignment.</p>
+      <i><b class="side-note">Side Note:</b> Clicking the <b>Close</b> button will close the menu without saving any filled out information. This will also skip adding one location if you are in the <b><a class="section-link" href="#section1">Getting Started</a></b> process.</i>
+      <p class="subtitle">Photo Guide</p>
+      <p>Screenshots of each step are included below to help guide you through this process.</p>
+      <img src="images/wip.png" alt="Work in Progress">
+    </div>
+  </section>
+
+  <section id="section3" class="guide-section">
+    <button class="section-header">
+      <span class="arrow">▶</span>
+      Adding Employees
+    </button>
+    <div class="section-content">
+      <hr>
+      <p>This section covers how to add employees after you have completed the <b><a class="section-link" href="#section1">Getting Started</a></b> process.</p>
+      <p class="subtitle">Opening the Add Employee Menu</p>
+      <ol>
+        <li>In the top-left corner of the Excel sheet, click the <b>Additional Options</b> button.</li>
+        <li>An options menu will appear.</li>
+        <li>Select <b>Add New Employee</b>.</li>
+      </ol>
+      <p class="subtitle" id="adding-employees-jump">Entering Employee Information</p>
+      <p>After selecting <b>Add New Employee</b>, an employee setup menu will be displayed.</p>
+      <p>In this menu, you will enter the following information:</p>
+      <ul>
+        <li><b>Employee Name</b></li>
+        <li><b>Permitted Hours per Week</b></li></b>
+        <li><b>Employee Note</b> (optional)</li>
+        <li><b>Salaried Status</b></li>
+      </ul>
+      <p>The <b>Employee Note</b>, if provided, will appear directly under the employee's name on the schedule. This can be used for role titles, availability notes, or other helpful identifiers.</p>
+      <p class="subtitle">Important Rules and Validation</p>
+      <p>Please note the following requirements when entering employee information:</p>
+      <ul>
+        <li><b>Employee names must be unique</b> and cannot match the name of any existing location or employee.</li>
+        <li><b>Special characters are not allowed</b> in employee names or employee notes.</li>
+      </ul>
+      <p>If any of these conditions are not met, the employee will not be saved.</p>
+      <p class="subtitle">Saving the Employee</p>
+      <p>Once all required information has been entered and verified, click the <b>Add Employee</b> button to finish adding the employee.</p>
+      <p>The employee will then be available for scheduling and location assignment.</p>
+      <i><b class="side-note">Side Note:</b> Clicking the <b>Close</b> button will close the menu without saving any filled out information. This will also skip adding one employee if you are in the <b><a class="section-link" href="#section1">Getting Started</a></b> process.</i>
+      <p class="subtitle">Creating an Employee's Default Schedule</p>
+      <p>After an employee is successfully added, and at least one location has been added previously, you will be prompted to choose whether you would like to <b>create the employee's default schedule</b>.</p>
+      <ul>
+        <li>If you select <b>Yes</b>, you will be taken to the default schedule setup.</li>
+        <li>Default schedules can <b>only be created using locations that already exist</b> in the system.</li>
+        <ul>
+          <li><i><b class="side-note">Side Note:</b> This is why locations are added before employees during the <b><a class="section-link" href="#section1">Getting Started</a></b> process.</i></li>
+        </ul>
+        <li>If you select <b>No</b>, the employee will be added without a default schedule.</li>
+      </ul>
+      <p>An employee's default schedule <b>can always be created or edited later</b>, so it is not required to complete this step immediately.</p>
+      <p>For detailed instructions, see the <b><a class="section-link" href="#section5:default-schedule-jump">Creating or Editing an Employee's Default Schedule</a></b> section of this guide.</p>
+      <p class="subtitle">Photo Guide</p>
+      <p>Screenshots of each step are included below to help guide you through this process.</p>
+      <img src="images/wip.png" alt="Work in Progress">
+    </div>
+  </section>
+
+  <section id="section4" class="guide-section">
+    <button class="section-header">
+      <span class="arrow">▶</span>
+      Editing the District Manager Schedule
+    </button>
+    <div class="section-content">
+      <hr>
+      <p>This section covers how to update the District Manager's schedule after you have completed the <b><a class="section-link" href="#section1">Getting Started</a></b> process.</p>
+      <p class="subtitle">Opening the District Manager Schedule Editor</p>
+      <ol>
+        <li>In the top-left corner of the Excel sheet, click the <b>Additional Options</b> button.</li>
+        <li>An options menu will appear.</li>
+        <li>Select <b>Edit District Manager Schedule</b>.</li>
+      </ol>
+      <p class="subtitle" id="district-manager-schedule-jump">District Manager Editor Overview</p>
+      <p>The District Manager Schedule menu will open and automatically populate with the <b>current District Manager schedule</b>.</p>
+      <p>If this is being completed during the <b><a class="section-link" href="#section1">Getting Started</a></b> process, the schedule may appear blank.</p>
+      <p>At the top of the menu is a field labeled <b>District Manager's Name</b>. Enter or update the District Manager's name in this text box.</p>
+      <p>Below the name field, you will see a text box for <b>each day of the week</b>, laid out horizontally to resemble a calendar week.</p>
+      <p class="subtitle">Entering the Schedule</p>
+      <p>Each day's text box is intended to contain the District Manager's schedule for that day. These boxes support <b>multiple lines of text</b>, allowing the schedule to be entered manually in a clear, readable format.</p>
+      <p>The current standard formatting is:</p>
+      <ul>
+        <li>Enter <b>"ON"</b> for each day the District Manager is working.</li>
+        <li>For <b>Saturday and Sunday</b>, enter the <b>names of the managers working those days.</b></li>
+        <li>Any <b>location</b> or <b>meeting</b> the District Manager is scheduled for may also be included if needed.</li>
+      </ul>
+      <p>This standard format provides flexibility while keeping the schedule easy to read.</p>
+      <p class="subtitle">Saving the District Manager's Schedule</p>
+      <p>Once all District Manager schedule information has been entered and verified, click the <b>Save Schedule</b> button.</p>
+      <p>You will be prompted to confirm your changes, as saving will <b>overwrite the existing District Manager schedule</b>. Select <b>Yes</b> to confirm and save the updated schedule.</p>
+      <i><b class="side-note">Side Note:</b> Clicking the <b>Close</b> button will close the menu without saving any filled out information. This will leave the District Manager's schedule blank if you are in the <b><a class="section-link" href="#section1">Getting Started</a></b> process.</i>
+      <p class="subtitle">Photo Guide</p>
+      <p>Screenshots of each step are included below to help guide you through this process.</p>
+      <img src="images/wip.png" alt="Work in Progress">
+    </div>
+  </section>
+
+  <section id="section5" class="guide-section">
+    <button class="section-header">
+      <span class="arrow">▶</span>
+      Creating or Editing an Employee's Default Schedule
+    </button>
+    <div class="section-content">
+      <hr>
+      <p>Creating an employee's default schedule is highly recommended, as it makes future schedule editing faster and more efficient. When editing schedules later, you can use a single button to <b>autofill the schedule editor</b> with the selected employee's default schedule.</p>
+      <p class="subtitle">Opening the Default Schedule Editor</p>
+      <ol>
+        <li>In the top-left corner of the Excel sheet, click the <b>Additional Options</b> button.</li>
+        <li>An options menu will appear.</li>
+        <li>Select <b>Edit Employee Default Schedule</b>.</li>
+        <li>Choose the desired employee from the <b>drop-down menu</b>.</li>
+        <li>Click the <b>Edit</b> button.</li>
+      </ol>
+      <p class="subtitle" id="default-schedule-jump">Purpose of Employee Default Schedules</p>
+      <p>Employee default schedules define an employee's <b>typical weekly work pattern</b> and are used to speed up schedule creation and editing.</p>
+      <p>When working in the schedule editor, you can use a single button to <b>autofill the entire week</b> with an employee's default schedule instead of entering each day manually. This helps ensure consistency and reduces repetitive data entry.</p>
+      <p>Employee default schedules are especially useful for:</p>
+      <ul>
+        <li>Employees with consistent weekly hours.</li>
+        <li>Reducing scheduling errors.</li>
+        <li>Quickly rebuilding schedules week over week.</li>
+      </ul>
+      <p>Default schedules can be updated at any time, and changes will apply the next time the autofill feature is used.</p>
+      <p class="subtitle">Default Schedule Behavior</p>
+      <p>By default, an employee's schedule is set to <b>off for every day of the week</b> until changes are made.</p>
+      <p>The default schedule editor is organized using <b>tabs for each day of the week</b>, making it easy to configure one day at a time.</p>
+      <p class="subtitle" id="default-schedule-layout-jump">Day Off Configuration Options</p>
+      <p>Within each day's tab the following options are available:</p>
+      <ul>
+        <li><b>Off Day Checkbox</b></li>
+        <ul>
+          <li>When checked, the employee is marked as off for that day.</li>
+        </ul>
+        <li><b>PTO Checkbox</b></li>
+        <ul>
+          <li>Becomes available when the employee is marked  as off.</li>
+          <li>This indicates the day is a PTO day. The employee will be off but will have the default PTO amount added to their total working hours for the week.</li>
+        </ul>
+      </ul>
+      <p class="subtitle">Using Weekday Defaults</p>
+      <p>To the right of the off checkboxes is a button with a <b>circular arrow icon</b>, which will autofill the open day tab with the <b>weekday default</b>.</p>
+      <p>For more weekday default information, see the <b><a class="section-link" href="#section6:weekday-default-jump">Editing the Weekday Default Schedules</a></b> section of this guide.</p>
+      <p class="subtitle">Work Details</p>
+      <p>Below the checkboxes, enter the employee's common work details for that day:
+      <ul>
+        <li><b>Location</b> (drop-down selection)</li>
+        <li><b>Clock In Time</b></li>
+        <li><b>Clock Out Time</b></li>
+        <li><b>Break</b> (minutes)</li>
+        <li><b>Note</b></li>
+      </ul>
+      <p class="subtitle">Second Location Option</p>
+      <p>Below the primary work details is a checkbox to indicate whether the employee works at a <b>second location</b> that day.</p>
+      <p>If enabled, additional fields will appear allowing you to select:</p>
+      <ul>
+        <li><b>Second Location</b> (drop-down selection)</li>
+        <li><b>Second Location Clock In Time</b></li>
+        <li><b>Second Location Clock Out Time</b></li>
+      </ul>
+      <p class="subtitle">Save the Default Schedule</p>
+      <p>Repeat this process for each day of the week as needed.</p>
+      <p>Once all desired default schedule information has been entered, click the <b>Save Defaults</b> button to finish.</p>
+      <p>The employee's default schedule will then be saved and available for autofill when creating or editing schedules.</p>
+      <i><b class="side-note">Side Note:</b> Clicking the <b>Close</b> button will close the menu without changing the employee's default schedule.</i>
+      <p class="subtitle">Photo Guide</p>
+      <p>Screenshots of each step are included below to help guide you through this process.</p>
+      <img src="images/wip.png" alt="Work in Progress">
+    </div>
+  </section>
+
+  <section id="section6" class="guide-section">
+    <button class="section-header">
+      <span class="arrow">▶</span>
+      Editing the Weekday Default Schedules
+    </button>
+    <div class="section-content">
+      <hr>
+      <p>Weekday default schedules are used to quickly autofill <b>a single day</b> when editing schedules. These defaults are especially helpful when most employees share similar working hours on certain days of the week.</p>
+      <p class="subtitle">Opening the Weekday Default Schedule Editor</p>
+      <ol>
+        <li>In the top-left corner of the Excel sheet, click the <b>Additional Options</b> button.</li>
+        <li>An options menu will appear.</li>
+        <li>Select <b>Edit Weekday Default Schedules</b>.</li>
+      </ol>
+      <p class="subtitle" id="weekday-default-jump">Purpose of Weekday Defaults</p>
+      <p>The weekday default schedule editor functions similarly to the employee default schedule editor, but instead of saving defaults per employee, it saves <b>standard schedules for each day of the week</b>.</p>
+      <p>These defaults can be applied with a single click when editing schedules.</p>
+      <i><b class="side-note">Example:</b> If most employees typically work <b>9:30 AM to 6:00 PM on Fridays</b>, you would set Friday's weekday default to those hours. When editing an employee's schedule, you can then autofill just Friday using the preset.</i>
+      <p class="subtitle">Default Weekday Settings</p>
+      <p>By default, the weekday schedules are set as follows:</p>
+      <ul>
+        <li><b>Monday - Saturday:</b></li>
+        <ul>
+          <li>Clock In: <b>9:30 AM</b></li>
+          <li>Clock Out: <b>6:00 PM</b></li>
+          <li>No Break</li>
+          <li>Note: <b>Lone Trade</b></li>
+          <li>No Second Location</li>
+        </ul>
+        <li><b>Sunday:</b></li>
+        <ul>
+          <li>Set as <b>Off</b></li>
+        </ul>
+      </ul>
+      <p>These defaults can be customized as needed to match your district's scheduling patterns.</p>
+      <p class="subtitle">Editing Weekday Defaults</p>
+      <p>The weekday default editor uses the same layout and options, except for location options, as the <b><a class="section-link" href="#section5:default-schedule-layout-jump">Employee Default Schedule Editor</a></b>, including:</p>
+      <ul>
+        <li>Day-Specific Tabs</li>
+        <li>Off and PTO Options</li>
+        <li>Clock In and Clock Out Times</li>
+        <li>Break Duration</li>
+        <li>Notes</li>
+        <li>Second Location Options</li>
+      </ul>
+      <p>Make any changes needed for each day of the week to reflect your standard scheduling practices.</p>
+      <p class="subtitle">Saving Weekday Defaults</p>
+      <p>Once your weekday defaults are configured, click the <b>Save Defaults</b> button to apply your changes.</p>
+      <p>These weekday defaults will now be available for <b>quick autofill of individual days</b> when creating or editing schedules.</p>
+      <i><b class="side-note">Side Note:</b> Clicking the <b>Close</b> button will close the menu without changing the weekday default schedules.</i>
+      <p class="subtitle">Photo Guide</p>
+      <p>Screenshots of each step are included below to help guide you through this process.</p>
+      <img src="images/wip.png" alt="Work in Progress">
+      <!-- img src="images/step1.png" alt="Getting Started" -->
+    </div>
+  </section>
+
+  <section id="section7" class="guide-section">
+    <button class="section-header">
+      <span class="arrow">▶</span>
+      Settings
+    </button>
+    <div class="section-content">
+      <hr>
+      <p>The <b>Settings</b> menu allows you to control the default behaviors, warnings, automation, and visual preferences within the Schedule Maker. Each setting can be updated at any time and will affect how schedules are created, edited, and displayed.</p>
+      <p class="subtitle">Opening the Settings Menu</p>
+      <ol>
+        <li>In the top-left corner of the Excel sheet, click the <b>Additional Options</b> button.</li>
+        <li>An options menu will appear.</li>
+        <li>Select <b>Open Settings</b>.</li>
+      </ol>
+      <p class="subtitle" id="settings-jump">Default PTO Hours Amount</p>
+      <p>This setting is a <b>numeric value</b> (default: <b>8</b>) that determines how many hours are added to an employee's <b>weekly worked hours</b> when they are scheduled <b>off for a PTO day</b>.</p>
+      <p>Important notes:</p>
+      <ul>
+        <li>PTO hours <b>count toward the employee's total hours</b> for the week.</li>
+        <li>PTO hours <b>do not contribute to any location's total hours.</b></li>
+        <li>If an employee uses less than the default amount of PTO (for example, 4 hours instead of 8):</li>
+        <ol>
+          <li>Temporarily change this setting to the desired value.</li>
+          <li>Schedule the employee off for PTO on that day.</li>
+          <li>Change the setting back to its default value if desired.</li>
+        </ol>
+      </ul>
+      <p class="subtitle">District Number</p>
+      <p>This setting is a <b>numeric value</b> that determines <b>the district number displayed in the schedule title</b>.</p>
+      <p>This value is normally set during the <b><a class="section-link" href="#section1">Getting Started</a></b> process, but is included here in case that step was skipped or needs to be updated later.</p>
+      <p class="subtitle">Update DM Schedule w/ Export</p>
+      <i>(On or Off — Off by default)</i>
+      <p>When enabled, you will be prompted to update the <b><a class="section-link" href="#section4">District Manager's Schedule</a></b> every time you export a schedule.</p>
+      <p>This can be helpful if:</p>
+      <ul>
+        <li>You frequently forget to update the district manager's schedule before exporting.</li>
+        <li>The district manager's schedule often changes week to week.</li>
+      </ul>
+      <p>If disabled, exporting the schedule will not prompt for updates to the district manager's schedule, and you will need to make sure to do so manually before exporting.</p>
+      <p class="subtitle" id="reset-warning-jump">Reset Warnings With Date</p>
+      <i>(On or Off — On by default)</i>
+      <p>For more details on warnings, see the <b><a class="section-link" href="#section8">Warnings</a></b> section of this guide.</p>
+      <p>Explaining briefly, warnings appear when:</p>
+      <ul>
+        <li>A location is not fully covered on an open day.</li>
+        <li>A location's scheduled hours exceeds its permitted hours.</li>
+        <li>An employee is scheduled for more hours than their permitted hours.</li>
+      </ul>
+      <p>Users may choose to </b>ignore warnings</b> in legitimate scenarios, such as:</p>
+      <ul>
+        <li>Approved overtime.</li>
+        <li>Coverage from an employee in another district.</li>
+        <li>Other unique staffing situations.</li>
+      </ul>
+      <p>When this setting is <b>On</b>, all previously ignored warnings will be <b>reset and shown again</b> whenever the schedule week dates are updated. This is based on the assumption that changing dates means a <b>new schedule</b> is being created</b>.</p>
+      <p>You may consider turning this setting <b>Off</b> if:</p>
+      <ul>
+        <li>You expect the same warning to appear every week and want to continue to ignore it.</li>
+      </ul>
+      <p>However, leaving this setting off can be risky, as it may cause <b>new or unintended warnings to be missed</b>.</p>
+      <p class="subtitle" id="autopopulate-setting">Autopopulate Schedule Editor</p>
+      <i>(On or Off — On by default)</i>
+      <p>When enabled, the schedule editor will automatically populate when opened using the option selected in the next setting.</p>
+      <p>When disabled, the schedule editor will open <b>completely blank</b>, requiring all information to be entered manually.</p>
+      <p class="subtitle">Value for Autopopulate</p>
+      <i>(Current Schedule, Employee Defaults, Weekday Defaults — Current Schedule by default)</i>
+      <p>This setting determines <b>what content is loaded into the schedule editor</b> when autopopulation is enabled:</p>
+      <ul>
+        <li><b>Current Schedule</b> — Loads in the existing schedule.</li>
+        <li><b>Employee Defaults</b> — Loads in each employee's default schedule.</li>
+        <li><b>Weekday Defaults</b> — Loads in the saved weekday default schedules.</li>
+      </ul>
+      <p>These options are named intuitively to describe exactly what will be populated automatically.</p>
+      <p class="subtitle">Schedule Color Theme</p>
+      <p>This setting allows you to choose the <b>visual color theme</b> used for the schedule.</p>
+      <p>Multiple themes are available, including several <b>holiday themed options</b>, allowing you to customize the look of the schedule to your preference or to match the season.</p>
+      <i><b class="side-note">Side Note:</b> Feel free to recommend a custom theme that is not available.</i>
+      <p class="subtitle">Saving Settings</p>
+      <p>After selecting your preferred options, click the <b>Save</b> button.</p>
+      <p>You will be prompted to confirm your selection, as saving will <b>overwrite any existing settings</b>. Select <b>Yes</b> to apply and save the new settings.</p>
+      <i><b class="side-note">Side Note:</b> Clicking the <b>Close</b> button will close the menu without changing any of the active settings.</i>
+      <!-- img src="images/step1.png" alt="Getting Started" -->
+    </div>
+  </section>
+
+  <section id="section8" class="guide-section">
+    <button class="section-header">
+      <span class="arrow">▶</span>
+      Warnings
+    </button>
+    <div class="section-content">
+      <hr>
+      <p>Warnings are automatically checked <b>any time the schedule is updated</b>, ensuring potential issues are identified as changes are made.</p>
+      <p>Warnings are informational and are meant to bring attention to possible scheduling oversights.</p>
+      <p class="subtitle">When Warnings Are Generated</p>
+      <p>The Schedule Maker checks for the following warning conditions:</p>
+      <ul>
+        <li><b>Location Permitted Hours Exceeded</b></li>
+        <ul>
+          <li>A warning is generated if a location is scheduled for more total hours than its permitted weekly hours.</li>
+        </ul>
+        <li><b>Employee Permitted Hours Exceeded</b></li>
+        <ul>
+          <li>A warning is generated if an employee is scheduled for more hours than they are permitted to work in a week.</li>
+        </ul>
+        <li><b>Location Not Fully Covered</b></li>
+        <ul>
+          <li>A warning is generated if a location is not fully covered for the number of hours it is open on any day of the week.</li>
+          <li><i><b class="side-note">Important Note:</b> A separate warning will appear for each affected day, if applicable.</i></li>
+        </ul>
+      </ul>
+      <p class="subtitle">Viewing Warnings</p>
+      <p>Warnings do <b>not</b> automatically appear on screen.</p>
+      <p>In the top left corner of the Excel sheet, there is a button with a <b>circled X icon</b>. If any warnings exist, this button will turn <b>red</b>.</p>
+      <p>Clicking this button will open the <b>Warnings menu</b>.</p>
+      <em><b class="side-note">Side Note:</b> If this button is not red, there are either no current warnings <b>or</b> all warnings have been ignored by the user. Despite no warnings, the menu can still be opened.</em>
+      <p class="subtitle">Warnings Menu</p>
+      <p>The Warnings menu displays an <b>individual list of all detected warnings</b>.</p>
+      <p>If the list box is empty, there are either no current warnings <b>or</b> all warnings have been ignored by the user.</p>
+      <p>Below the warnings list are three buttons:</p>
+      <ul>
+        <li><b>Ignore Warning</b></li>
+        <ul>
+          <li>Allows you to select a specific warning from the list and ignore it. Ignored warnings will no longer appear in the list.</li>
+        </ul>
+        <li><b>Reset Ignored</b></li>
+        <ul>
+          <li>Re-enables all previously ignored warnings and rescans the schedule for any current present warnings.</li>
+        </ul>
+        <li><b>Close</b></li>
+        <ul>
+          <li>Closes the warning menu.</li>
+        </ul>
+      </ul>
+      <p class="subtitle">Warning Indicator Behavior</p>
+      <p>The warnings button will remain red as long as there are active warnings.</p>
+      <p>The button will return to its normal state only when:</p>
+      <ul>
+        <li>All warnings have been resolved.</li>
+        <p><b>Or</b></p>
+        <li>All existing warnings have been intentionally ignored.</li>
+      </ul>
+      <em><b class="side-note">Side Note:</b> Ignored warnings may also reappear depending on the <b><a class="section-link" href="#section7:reset-warning-jump">Reset Warnings with Date</a></b> setting when schedule dates are changed.</em>
+      <p class="subtitle">Photo Guide</p>
+      <p>Screenshots of each step are included below to help guide you through this process.</p>
+      <img src="images/wip.png" alt="Work in Progress">
+    </div>
+  </section>
+
+  <section id="section9" class="guide-section">
+    <button class="section-header">
+      <span class="arrow">▶</span>
+      Editing / Deleting Locations
+    </button>
+    <div class="section-content">
+      <hr>
+      <p>This section explains how to edit or delete an existing location.</p>
+      <p class="subtitle">Opening the Location Management Menu</p>
+      <ol>
+        <li>In the top-left corner of the Excel sheet, click the <b>Additional Options</b> button.</li>
+        <li>An options menu will appear.</li>
+        <li>Select <b>Edit or Delete Existing Location</b>.</li>
+      </ol>
+      <p>A menu will appear allowing you to manage existing locations.</p>
+      <p class="subtitle">Selecting a Location</p>
+      <p>At the top of the menu, select the desired location from the <b>drop-down list</b>.</p>
+      <p>Below the drop-down menu are two buttons:</p>
+      <ul>
+        <li>Edit</li>
+        <li>Delete</li>
+      </ul>
+      <p class="subtitle">Editing a Location</p>
+      <p>If you click <b>Edit</b>, the same menu used when originally adding the location will appear, prefilled with the current location information.</p>
+      <p>You may modify:</p>
+      <ul>
+        <li>Location name</li>
+        <li>Permitted hours</li>
+        <li>Open days and hours</li>
+      </ul>
+      <p>After making changes, click the <b>Save Location</b> button to save updates.</p>
+      <p>All updates will immediately reflect in the schedule.</p>
+      <p class="subtitle">Important Rules and Validation<p>
+      <p>Please note the following requirements when editing location information:</p>
+      <ul>
+        <li><b>Location names must be unique</b> and cannot match the name of any existing location or employee.</li>
+        <li><b>Special characters are not allowed</b> in location names.</li>
+        <li><b>Permitted hours per week must exceed the total number of open hours</b> for the location each week.</li>
+      </ul>
+      <p>If any of these conditions are not met, the location will not be saved.</p>
+      <p class="subtitle">Deleting a Location</p>
+      <p>If you click <b>Delete</b>, you will be prompted to confirm your selection.</p>
+      <ul>
+        <li>Selecting <b>Yes</b> will permanently delete the selected location.</li>
+        <li>Any employees scheduled to work at that location will automatically be set to <b>Off</b> on those days.</li>
+      </ul>
+      <p>This action cannot be undone unless the location is re-created and schedules are manually restored.</p>
+      <p class="subtitle">Photo Guide</p>
+      <p>Screenshots of each step are included below to help guide you through this process.</p>
+      <img src="images/wip.png" alt="Work in Progress">
+
+    </div>
+  </section>
+
+  <section id="section10" class="guide-section">
+    <button class="section-header">
+      <span class="arrow">▶</span>
+      Editing / Deleting Employees
+    </button>
+    <div class="section-content">
+      <hr>
+      <p>This section explains how to edit or delete an existing employee.</p>
+      <p class="subtitle">Opening the Employee Management Menu</p>
+      <ol>
+        <li>In the top-left corner of the Excel sheet, click the <b>Additional Options</b> button.</li>
+        <li>An options menu will appear.</li>
+        <li>Select <b>Edit or Delete Existing Employee</b>.</li>
+      </ol>
+      <p>A menu will appear allowing you to manage existing employees.</p>
+      <p class="subtitle">Selecting an Employee</p>
+      <p>At the top of the menu, select the desired employee from the <b>drop-down list</b>.</p>
+      <p>Below the drop-down menu are two buttons:</p>
+      <ul>
+        <li>Edit</li>
+        <li>Delete</li>
+      </ul>
+      <p class="subtitle">Editing an Employee</p>
+      <p>If you click <b>Edit</b>, the same menu used when originally adding the employee will appear, prefilled with the current employee's information.</p>
+      <p>You may modify:</p>
+      <ul>
+        <li>Employee name</li>
+        <li>Permitted hours</li>
+        <li>Employee note</li>
+        <li>Salaried status</li>
+      </ul>
+      <p>After making changes, click the <b>Edit Employee</b> button to save updates.</p>
+      <p>All updates will immediately reflect in the schedule.</p>
+      <p class="subtitle">Important Rules and Validation<p>
+      <p>Please note the following requirements when entering employee information:</p>
+      <ul>
+        <li><b>Employee names must be unique</b> and cannot match the name of any existing location or employee.</li>
+        <li><b>Special characters are not allowed</b> in employee names or employee notes.</li>
+      </ul>
+      <p>If any of these conditions are not met, the employee will not be saved.</p>
+      <p class="subtitle">Deleting an Employee</p>
+      <p>If you click <b>Delete</b>, you will be prompted to confirm your selection.</p>
+      <ul>
+        <li>Selecting <b>Yes</b> will permanently delete the selected employee.</li>
+        <li>The employee's row will be removed from the schedule.</li>
+      </ul>
+      <p>This action cannot be undone unless the employee is re-created and their schedule is manually restored.</p>
+      <p class="subtitle">Photo Guide</p>
+      <p>Screenshots of each step are included below to help guide you through this process.</p>
+      <img src="images/wip.png" alt="Work in Progress">
+
+    </div>
+  </section>
+
+  <section id="section11" class="guide-section">
+    <button class="section-header">
+      <span class="arrow">▶</span>
+      Editing the Schedule Order
+    </button>
+    <div class="section-content">
+      <hr>
+      <p>This section covers how to change the vertical order of employees as they appear on the schedule.</p>
+      <p>This is useful for organizing employees by role, location grouping, personal preference, etcetera.</p>
+      <p class="subtitle">Opening the Schedule Order Menu</p>
+      <ol>
+        <li>In the top-left corner of the Excel sheet, click the <b>Additional Options</b> button.</li>
+        <li>An options menu will appear.</li>
+        <li>Select <b>Edit Schedule Order</b>.</li>
+      </ol>
+      <p class="subtitle">Changing the Order</p>
+      <ol>
+        <li>Click the name of the employee you would like to move.</li>
+        <li>Use the <b>Up Arrow</b> or <b>Down Arrow</b> buttons to move the selected employee to the desired position in the list.</li>
+        <li>Repeat this process as needed until the employee names appear in your preferred order.</li>
+      </ol>
+      <p class="subtitle">Saving Changes</p>
+      <p>Once the list reflects the desired schedule order:</p>
+      <ul>
+        <li>Click the <b>Save</b> button to apply the new order to the schedule.</li>
+      </ul>
+      <p>If you decide not to keep your changes you can click the <b>Close</b> button without clicking the <b>Save</b> button.</p>
+      <p>The schedule order will only update if the <b>Save</b> button is clicked.
+    </div>
+  </section>
+
+  <section id="section12" class="guide-section">
+    <button class="section-header">
+      <span class="arrow">▶</span>
+      Editing the Schedule
+    </button>
+    <div class="section-content">
+      <hr>
+      <p><b>Please read this entire section before editing the schedule.</b></p>
+      <p>This section covers how to use the schedule editor to create and modify the schedule.</p>
+      <p class="subtitle">Opening the Schedule Editor</p>
+      <ul>
+        <li>In the top-left corner of the Excel sheet, click the <b>Edit Schedule</b> button.</li>
+      </ul>
+      <p class="subtitle">Selecting an Employee</p>
+      <p>At the top of the schedule editor is a drop-down list where you select the employee whose schedule you would like to edit.</p>
+      <p>When switching to a different employee:</p>
+      <ul>
+        <li>The schedule editor will automatically populate based on your <b><a class="section-link" href="#section7:autopopulate-setting">Autopopulate Settings</a></b>.</li>
+      </ul>
+      <p class="subtitle">Applying an Employee's Default Schedule</p>
+      <p>To the right of the employee drop-down menu is a button with a <b>circular arrow icon</b>.</p>
+      <ul>
+        <li>Clicking this button will load the selected <b><a class="section-link" href="#section5">Employee's Default Schedule</a></b> into the editor.</li>
+      </ul>
+      <p><b class="side-note">Important Note:</b> After loading a default schedule, you must still click <b>Save</b> to apply it to the current week and before changing the selected employee</p>
+      <p class="subtitle">Navigating the Weekday Tabs</p>
+      <p>Below the employee drop-down menu are <b>tabs for each day of the week</b>.</p>
+      <p>To define and edit a schedule:</p>
+      <ul>
+        <li>Click each tab individually.</li>
+        <li>Configure the employee's schedule for that specific weekday within each tab.</li>
+      </ul>
+      <p class="subtitle">Day Configuration Options</p>
+      <ol>
+        <b><li>Off & PTO Options</li></b>
+        <ul>
+          <li><b>Off Checkbox</b></li>
+          <ul><li><i>Marks the employee as off for the open weekday.</i></li></ul>
+          <li><b>PTO Checkbox</b></li>
+          <ul><li><i>Becomes toggable when the employee is marked off. Marks the off day as a PTO day, using hours.</i></li></ul>
+        </ul>
+        <b><li>Weekday Default Button</li></b>
+        <ul>
+          <li>This button is to the right of the <b>Off Checkboxes</b> and has a <b>circular arrow</b> icon.</li>
+          <li>This button, when clicked, loads the <b><a class="section-link" href="#section6">Weekday Default Schedule</a></b> for the open tab.</li>
+          <ul><li><i><b class="side-note">Example:</b> If the Monday tab is open, clicking this button loads the Monday weekday default schedule only.</i></li></ul>
+        </ul>
+        <b><li>Location</li></b>
+        <ul><li>This is a drop-down menu that allows you to select the location the employee will be at on the open weekday.</li></ul>
+        <b><li>Clock In Time</li></b>
+        <ul><li>This will be the time the employee will start their day.</li></ul>
+        <ul><li>Format the time as: <b>hh:mm AM/PM</b></li></ul>
+        <b><li>Clock Out Time</li></b>
+        <ul><li>This will be the time the employee will either end their day or leave the first location.</li></ul>
+        <ul><li>Format the time as: <b>hh:mm AM/PM</b></li></ul>
+        <b><li>Break</li></b>
+        <ul><li>In this box you will input, in minutes, how long the employee's break should be on the open weekday.</li></ul>
+        <ul><li><i><b class="side-note">Example:</b> If an employee should have an hour-long break, you must enter "60" into the break box.</i></li></ul>
+        <b><li>Note</li></b>
+        <ul><li>This is the note that will be under the employee's schedule for the open weekday.</li></ul>
+
+        <b><li>Second Location Checkbox</li></b>
+        <ul>
+          <li>If you intend to schedule an employee at a second location in one day, check this checkbox.</li>
+        </ul>
+        <b><li>Second Location</li></b>
+        <ul>
+          <li>This drop-down list becomes toggable when the <b>Second Location CheckBox</b> is checked.</li>
+          <li>This is a drop-down menu that allows you to select the second location the employee will be at on the open weekday.</li>
+        </ul>
+        <b><li>Second Clock In Time</li></b>
+        <ul>
+          <li>This text box becomes editable when the <b>Second Location CheckBox</b> is checked.</li>
+          <li>This will be the time the employee will start their shift at the second location.</li>
+          <li>Format the time as: <b>hh:mm AM/PM</b></li>
+        </ul>
+        <b><li>Second Clock Out Time</li></b>
+        <ul>
+          <li>This text box becomes editable when the <b>Second Location CheckBox</b> is checked.</li>
+          <li>This will be the time the employee will end their shift at the second location.</li>
+          <li>Format the time as: <b>hh:mm AM/PM</b></li>
+        </ul>
+      </ol>
+      <p class="subtitle">Daily and Weekly Hours Totals</p>
+      <p>Within each day's tab, at the bottom, you will see:</p>
+      <ul>
+        <li>The <b>date</b> of that weekday according to the current schedule week.</li>
+        <li>The <b>total hours scheduled</b> for that day.</li>
+      </ul>
+      <p>This allows you to quickly verify hours while building the schedule</p>
+      <p><i><b class="side-note">Side Note:</b> Due to Excel limitations, the total hours viewed in the menu may not update correctly until you click into a new text box. Clicking <b>Save</b> will use the accurate hours and not the hours that can be seen in the menu.</i></p>
+      <p class="subtitle">Version and Control Buttons</p>
+      <p>On the lower left of the schedule editor is a </b>Version Number</b> field.</p>
+      <p>You may modify this number to define the version of the schedule you are working on.</p>
+      <p>To the right of this field are the following buttons:</p>
+      <ul>
+        <b>
+          <li>Save</li>
+          <li>Close</li>
+          <li>Update Schedule Dates</li>
+        </b>
+        <ul><li>This button is defined with a document icon.</li></ul>
+      </ul>
+      <p class="subtitle">Updating Schedule Dates</p>
+      <p>There are two ways to update the schedule dates:</p>
+      <ol>
+        <b><li>Within the Schedule Editor</li></b>
+        <p>After opening the schedule editor you can click the <b>Update Schedule Dates</b> button at the bottom right of the menu inside the schedule editor. This button is defined with a document icon.</p>
+        <b><li>Outside the Schedule Editor</li></b>
+        <p>In the top left of the Excel sheet, you can click the <b>Update Schedule Dates</b> button. This button is also defined with a document icon.</p>
+      </ol>
+      <p>Clicking either button will prompt you to enter a date.</p>
+      <ul>
+        <li>Enter any date within the week you want to build.</li>
+        <li>The schedule maker will adjust the entire schedule to reflect that week.</li>
+      </ul>
+      <p><i><b class="side-note">Side Note:</b> Changing the schedule dates may trigger warnings to reset depending on your settings.</i></p>
+      <p class="subtitle">Saving an Employee's Schedule</p>
+      <p>After making changes for an employee, you <b>must click Save</b> before switching to another employee.</p>
+      <p>If you change employees without saving, the schedule you entered for the previous employee will <b>not</b> save.
+      <p class="subtitle">Workflow Recommendation</p>
+      <p>For best results, I recommend the following workflow:</p>
+      <ol>
+        <li>Select employee.</li>
+        <li>Use employee's default schedule or the weekday default schedules.</li>
+        <li>Adjust each day as needed.</li>
+        <li>Review total weekly hours.</li>
+        <ul><li><i><b class="side-note">Note:</b> Due to Excel limitations, the total hours viewed in the menu may not update correctly until you click into a new text box. Clicking <b>Save</b> will use the correct hours and not always the hours that can be seen in the menu.</i></li></ul>
+        <li>Click <b>Save</b>.</li>
+        <li>Move to the next employee.</li>
+        <li>Repeat steps 1 through 6 until finished.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="section13" class="guide-section">
+    <button class="section-header">
+      <span class="arrow">▶</span>
+      Exporting the Schedule
+    </button>
+    <div class="section-content">
+      <hr>
+      <p>Once the schedule is complete, it is ready to be exported and distributed.
+      <p>There are two ways to export the schedule:</p>
+      <ol>
+        <b><li>Quick Save Button</li></b>
+        <ul><li>Click the <b>Save</b> button (floppy disk icon) in the <b>top left corner</b> of the Excel sheet.</li></ul>
+        <b><li>Export Schedule Button</li></b>
+        <ul><li>Open <b>Additional Options</b>.</li><li>Click the <b>Export Schedule</b> button.</li></ul>
+      </ol>
+      <p>Both options will open your <b>File Explorer</b>, allowing you to choose where the files will be saved.</p>
+      <p class="subtitle">Default File Name</p>
+      <p>By default, the exported file will be named:</p>
+      <b><small>District_[District Number]_Storage_Export_Schedule_v[Version Number]_[Monday Date]_to_[Sunday Date]</small></b>
+      <p>You may rename the file before saving if desired.</p>
+      <p>Exporting may take a moment depending on system performance, but you will receive a message box that says "Export complete." once the process finishes.</p>
+      <p class="subtitle">What Gets Exported</p>
+      <p>Exporting the schedule creates <b>three separate files:</b></p>
+      <ol>
+        <b><li>Word Document (Main Schedule)</li></b>
+        <ul>
+          <li>The schedule is exported as a Word document.</li>
+          <li>This file can be opened and edited further if needed.</li>
+          <li>This is the file that will be emailed to your district.</li>
+        </ul>
+        <b><li>PDF — Hours Report</li></b>
+        <ul>
+          <li>A <b>PDF file</b> is created with the same file name you chose, except the ending will include <b>_Hours_Report</b>.</li>
+          <li>This is an export of the <b>Hours Export</b> sheet in the Schedule Maker Excel file.</li>
+          <li>This report includes each location's worked hours along with each employee's worked hours.</li>
+        </ul>
+        <b><li>Excel File (Schedule Backup Copy)</li></b>
+        <ul>
+          <li>A copy of the <b>Schedule Maker Excel file</b> is also exported.</li>
+          <li>It uses the same file name you chose.</li>
+          <li>This file contains the exact schedule you created.</li>
+          <li>This version should be used if you need to:</li>
+          <ol>
+            <li>Make schedule adjustment / changes.</li>
+            <li>Create a revised version due to call out's or other factors</li>
+          </ol>
+        </ul>
+      </ol>
+      <p>For detailed instructions on creating a revised schedule version, see the <b><a class="section-link" href="#section14">Updating the Schedule / Making New Schedule Versions</a></b> section of this guide.</p>
+    </div>
+  </section>
+
+  <section id="section14" class="guide-section">
+    <button class="section-header">
+      <span class="arrow">▶</span>
+      Updating the Schedule / Making New Schedule Versions
+    </button>
+    <div class="section-content">
+      <hr>
+      <p> Sometimes a schedule must be <b>revised after it has already been exported</b>. This may happen for many reasons such as employee availability changes, coverage adjustments, or other last minute updates.</p>
+      <p>When revising a schedule, it is recommended to use the <b>previously exported Excel schedule file</b> rather than the original Schedule Maker file.</p>
+      <p>This prevents conflicts if you have already begun working on the <b>following week's schedule</b> in the main Schedule Maker file.</p>
+      <p class="subtitle">Using the Exported Schedule</p>
+      <ol>
+        <li>Open the previously <b>exported Excel schedule file</b>.</li>
+        <li>Use the <b><a class="section-link" href="#section12">Edit Schedule</a></b> feature to make the necessary changes to employee schedules.</li>
+        <li>Update the schedule version.</li>
+        <li>Highlight schedule changes.</li>
+        <li>Export the newly updated schedule.</li>
+      </ol>
+      <p>Read below for further detail.</p>
+      <p class="subtitle">Updating the Schedule Version</p>
+      <p>While the <b>Schedule Editor</b> menu is open, update the <b>Version number</b> located in the bottom-left corner of the editor.</p>
+      <p>This number should reflect the revision you are currently making.</p>
+      <p>Updating the version number helps clearly indicate which schedule version is the most current when distributing revisions.</p>
+      <p class="subtitle">Highlighting Schedule Changes</p>
+      <p>After making edits, you may highlight the changes so they are easy for others to identify.</p>
+      <p>To open the highlighting tool:</p>
+      <ul>
+        <li>Click the <b>Highlight</b> button in the top left corner of the Excel sheet.</li>
+        <li>This button is identified by a <b>writing utensil icon</b>.</li>
+      </ul>
+      <p>When clicked, a <b>color selection menu</b> will appear.</p>
+      <p>When finished using the highlight tool, click the highlight button again. The color options will disappear.</p>
+      <p class="subtitle">Choosing a Highlight Color</p>
+      <p>The color will default to </b>yellow</b>, but there are <b>three highlight colors</b> available.</p>
+      <p>Select the color you want to use, then click the schedule cells that were modified to highlight them.</p>
+      <p class="subtitle">Removing Highlights</p>
+      <p>The highlight menu also includes two options for removing highlights:</p>
+      <ul>
+        <b><li>Erase Button</li></b>
+        <ul>
+          <li>Appears as a <b>white button with red slashes</b>.</li>
+          <li>Allows you to click highlighted cells individually to remove the highlight.</li>
+        </ul>
+        <b><li>Clear All Highlights Button</li></b>
+        <ul>
+          <li>Appears as a button with an <b>X</b>.</li>
+          <li>Removes <b>all highlights</b> from the schedule at once.</li>
+            <ul><li><b class="side-note">Important:</b> This action cannot be undone once clicked.</li></ul>
+        </ul>
+      </ul>
+      <p class="subtitle">Exporting the Revised Schedule</p>
+      <p>After completing your changes:</p>
+      <ol>
+        <li>Ensure the <b>version number has been updated</b>.</li>
+        <li>Highlight any changes if desired.</li>
+        <li><i><b><a class="section-link" href="#section13">Export</a> the schedule again</b>.</i></li>
+      </ol>
+      <p class="subtitle">Final Adjustments</p>
+      <p>If additional formatting or highlights are desired, they may also be applied directly in the <b>exported Word document</b> before distributing the updated schedule.</p>
+    </div>
+  </section>
+
+  <section id="section15" class="guide-section">
+    <button class="section-header">
+      <span class="arrow">▶</span>
+      Viewing Employee & Location Hours
+    </button>
+    <div class="section-content">
+      <hr>
+
+    </div>
+  </section>
+
+  <section id="updates" class="guide-section">
+    <button class="section-header">
+      <span class="arrow">▶</span>
+      Change Log
+    </button>
+    <div class="section-content">
+      <hr>
+      <p class="subtitle">Upcoming Update Q1 2026</p>
+      <p><b class="side-note">### Adding</b></p>
+      <ul>
+        <li>Will add an option to view all ignored warnings with an option to individually undo ignored warnings.</li>
+        <li>Will add a start-up option to import employee, location, and setting data. This is meant to streamline the update process. When new versions of the Excel sheet are released this will allow you to import old data from old versions to avoid doing so automatically.</li>
+        <li>Will add a version number to the Excel sheet viewable in the additional option's menu.</li>
+      </ul>
+      <p><b class="side-note">### Changing</b></p>
+      <ul>
+        <li>During the getting started process, when defining an employee's default schedule, you will be given the option to set their schedule to this immediately afterwards.</li>
+        <li>When exporting the schedule, you will be notified if there are any warnings and asked to confirm your desire to ignore them for the export.</li>
+      </ul>
+      <p><b class="side-note">### Fixing</b></p>
+      <ul>
+        <li>There is currently a bug that causes the schedule maker to fail when your autopopulate setting is set to "Employee Defaults", but the employee's default is blank. This will be fixed.</li>
+      </ul>
+      <p class="subtitle">[1.0.0] Initial Release 2026-01-24</p>
+      <p>Initial release of the Schedule Maker excel tool.</p>
+
+      <!--
+        Change Log Categories:
+        1. ### Added (New Features)
+        2. ### Changed (Changes to Existing Functionality)
+        3. ### Deprecated (Soon to be Removed Features)
+        4. ### Removed (Removed Features)
+        5. ### Fixed (Bug Fixes)
+        6. ### Security (Vulnerability Fixes)
+      -->
+    </div>
+  </section>
+
+
+</main>
+
+<!-- Scroll to Top Button -->
+
+<footer class="page-footer">
+  © 2026 <a href="https://www.ducktechtive.com" target="_blank">Ducktechtive LLC</a> ● All Rights Reserved
+  <!--© 2026 <a href="https://www.atlanticselfstorage.com" target="_blank">Atlantic Self Storage</a> ● All Rights Reserved</p> -->
+</footer>
+
+<button id="scrollTopBtn">▲</button>
+
+
+
+
+<script src="script.js" defer></script>
+</body>
+</html>
+
