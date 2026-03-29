@@ -226,7 +226,6 @@ searchInput.addEventListener("input", function () {
       };
 
       resultItem.addEventListener("click", handler);
-      resultItem.addEventListener("touchstart", handler);
 
       resultsContainer.appendChild(resultItem);
     }
