@@ -49,31 +49,22 @@ document.querySelectorAll('.content-menu a').forEach(link => {
 
     const targetId = this.getAttribute('href').substring(1);
     const section = document.getElementById(targetId);
-
     if (!section) return;
 
     const content = section.querySelector('.section-content');
 
     closeAllSections();
-
     section.classList.add('open');
     content.style.maxHeight = content.scrollHeight + "px";
+
     setTimeout(() => {
       section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }, 200);
-
   });
 });
 
 document.querySelectorAll('.section-link').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    openSectionById(link.getAttribute('href').substring(1));
-  });
-});
-
-document.querySelectorAll('.section-link').forEach(link => {
-  link.addEventListener('click', e => {
+  const handler = (e) => {
     e.preventDefault();
 
     const target = link.getAttribute('href').substring(1);
@@ -82,17 +73,18 @@ document.querySelectorAll('.section-link').forEach(link => {
     const section = document.getElementById(sectionId);
     if (!section) return;
 
-    const content = section.querySelector('.section-content');
-    const anchor = document.getElementById(anchorId);
-
     openSectionById(sectionId);
 
     setTimeout(() => {
+      const anchor = document.getElementById(anchorId);
       if (anchor) {
         anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }, 300);
-  });
+  };
+
+  link.addEventListener('click', handler);
+  link.addEventListener('touchstart', handler);
 });
 
 const scrollBtn = document.getElementById('scrollTopBtn');
@@ -101,7 +93,6 @@ const landingBG = document.querySelector('.landing-bg');
 scrollBtn.addEventListener('click', () => {
   closeAllSections();
   window.scrollTo({ top: 0, behavior: 'smooth' });
-
 });
 
 window.addEventListener('scroll', () => {
@@ -121,12 +112,11 @@ function updateFloatingButtons() {
 }
 
 window.addEventListener('scroll', updateFloatingButtons);
-
 window.addEventListener('load', updateFloatingButtons);
 
 const searchInput = document.getElementById("searchInput");
 const searchResults = document.getElementById("searchResults");
-const resultsContainer = document.getElementById("searchResults");
+const resultsContainer = searchResults;
 
 const contentDropdown = document.querySelector('.content-dropdown');
 const contentBtn = document.querySelector('.content-btn');
@@ -137,6 +127,7 @@ const subbanner = document.querySelector('.banner-subbar');
 function updateBanner() {
   banner.classList.toggle('hidden', window.scrollY > 300);
   subbanner.classList.toggle('hidden', window.scrollY > 200);
+
   if (searchResults.classList.contains("active") && window.scrollY > 300) {
     searchResults.classList.remove("active");
     searchInput.value = "";
@@ -144,16 +135,12 @@ function updateBanner() {
 }
 
 window.addEventListener('scroll', updateBanner);
-
-window.addEventListener('load', () => {
-  requestAnimationFrame(() => {
-    updateBanner();
-  });
-});
+window.addEventListener('load', () => requestAnimationFrame(updateBanner));
 
 contentBtn.addEventListener('click', e => {
   e.stopPropagation();
   contentDropdown.classList.toggle('open');
+
   if (searchResults.classList.contains("active")) {
     searchResults.classList.remove("active");
     searchInput.value = "";
@@ -161,12 +148,13 @@ contentBtn.addEventListener('click', e => {
 });
 
 function closeContentMenu() {
+  contentMenu.scrollTo({ top: 0, behavior: 'smooth' });
   contentDropdown.classList.remove('open');
 }
 
 document.addEventListener('click', e => {
   if (!contentDropdown.contains(e.target)) {
-    closeContentMenu()
+    closeContentMenu();
   }
 });
 
@@ -188,6 +176,10 @@ window.addEventListener('scroll', () => {
   lastScrollY = currentScrollY;
 });
 
+function escapeRegex(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 searchInput.addEventListener("input", function () {
   const query = this.value.trim().toLowerCase();
   resultsContainer.innerHTML = '';
@@ -197,55 +189,54 @@ searchInput.addEventListener("input", function () {
     removeHighlights();
     return;
   }
+
+  const safeQuery = escapeRegex(query);
+  const regex = new RegExp(safeQuery, 'gi');
+
   resultsContainer.classList.add('active');
 
   document.querySelectorAll(".guide-section").forEach(section => {
     const sectionId = section.id;
-    const sectionTitle = section.querySelector('.section-header').innerText.substring(2);
+    const sectionTitle = section.querySelector('.section-header').textContent.substring(2);
     const content = section.querySelector('.section-content');
-    const text = content.innerText;
+    const text = content.textContent;
 
-    const regex = new RegExp(query, 'gi');
     let match;
-
     let matchIndex = 0;
 
     while ((match = regex.exec(text)) !== null) {
-
-      const currentMatchIndex = matchIndex;
-      matchIndex++;
-
+      const currentMatchIndex = matchIndex++;
       const start = Math.max(match.index - 40, 0);
       const end = Math.min(match.index + 40, text.length);
       const snippet = text.substring(start, end);
+
       const resultItem = document.createElement('div');
       resultItem.classList.add('search-item');
 
-      const regexHighlight = new RegExp(`(${query})`, 'gi');
-
+      const regexHighlight = new RegExp(`(${safeQuery})`, 'gi');
       const highlightedSnippet = snippet.replace(regexHighlight, '<span class="dropdown-highlight">$1</span>');
 
       resultItem.innerHTML = `<strong>${sectionTitle}</strong><div class="search-snippet">..${highlightedSnippet}...</div>`;
 
-      resultItem.addEventListener("click", () => {
-        openSection(section);
+      const handler = () => {
+        openSectionById(sectionId);
         setTimeout(() => {
-          highlightMatch(section, query, currentMatchIndex);
+          highlightMatch(section, safeQuery, currentMatchIndex);
         }, 500);
-      });
+      };
+
+      resultItem.addEventListener("click", handler);
+      resultItem.addEventListener("touchstart", handler);
 
       resultsContainer.appendChild(resultItem);
     }
   });
-
 });
 
 function highlightMatch(section, query, targetIndex) {
-
   removeHighlights();
 
   const content = section.querySelector('.section-content');
-
   const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT, null, false);
 
   let matchCount = 0;
@@ -256,7 +247,6 @@ function highlightMatch(section, query, targetIndex) {
     const text = node.nodeValue;
 
     let match;
-
     while ((match = regex.exec(text)) !== null) {
       if (matchCount === targetIndex) {
         const range = document.createRange();
@@ -272,7 +262,6 @@ function highlightMatch(section, query, targetIndex) {
         const y = span.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
         window.scrollTo({ top: y, behavior: 'smooth' });
-
         return;
       }
       matchCount++;
@@ -280,20 +269,10 @@ function highlightMatch(section, query, targetIndex) {
   }
 }
 
-
 function removeHighlights() {
   document.querySelectorAll('.search-highlight').forEach(el => {
     const parent = el.parentNode;
     parent.replaceChild(document.createTextNode(el.textContent), el);
     parent.normalize();
   });
-}
-
-function openSection(section) {
-  const content = section.querySelector('.section-content');
-
-  closeAllSections();
-
-  section.classList.add("open");
-  content.style.maxHeight = content.scrollHeight + "px";
 }
