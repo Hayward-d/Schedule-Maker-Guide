@@ -682,7 +682,7 @@ hr.searching {
   }
   #searchInput {
     min-height: 50px;
-    font-size: 2rem;
+    font-size: 32px;
   }
   .search-snippet {
     font-size: 2rem;
