@@ -64,6 +64,10 @@
         <hr class="content-line">
         <a href="#UpdatingScheduleMakerSection">Updating the Schedule Maker</a>
         <hr class="content-line">
+		<a href="#SchedulingDayOffSection">Scheduling Future Days Off</a>
+        <hr class="content-line">
+		<a href="#AvailableHoursSection">Viewing Available Hours</a>
+        <hr class="content-line">
 
         <a href="#updates">Change Log</a>
       </div>
@@ -73,7 +77,7 @@
   </div>
 </header>
 
-<div class="banner-subbar"><span>This Guide is for Schedule Maker Version 1.1.0.</span></div>
+<div class="banner-subbar"><span>This Guide is for Schedule Maker Version 1.1.1.</span></div>
 
 <section class="landing">
   <picture>
@@ -91,7 +95,7 @@
     <h1>Excel Schedule Maker Guide</h1>
     <p style="margin: 0px auto;">Learn how to use the scheduling workbook step by step. Use search, contents, or jump directly into any section.</p>
     <img src="images/divider.png" alt="divider" style="display: block; margin: 0px auto; max-width: 100%; opacity: 0.3;">
-    <p style="text-align: left; margin: 0px auto;"><b><u>Important:</u></b> Confirm that you are using the latest version of the Schedule Maker before following this guide. The current version is <b>1.1.0</b>, available as of March 16, 2026. Earlier versions may not support all features described in this guide.</p>
+    <p style="text-align: left; margin: 0px auto;"><b><u>Important:</u></b> Confirm that you are using the latest version of the Schedule Maker before following this guide. The current version is <b>1.1.1</b>, available as of April 15, 2026. Earlier versions may not support all features described in this guide.</p>
   </div>
 </section>
 
@@ -102,9 +106,10 @@
       Introduction Video
     </button>
     <div class="section-content">
+		<hr>
       <p>Coming Soon...</p>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/K4TOrB7at0Y?si=me-R-MF8MfaGHeKm" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      <hr>
+      <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/K4TOrB7at0Y?si=me-R-MF8MfaGHeKm" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+	  <hr>-->
     </div>
   </section>
 
@@ -553,6 +558,21 @@
       <p>This setting allows you to choose the <b>visual color theme</b> used for the schedule.</p>
       <p>Multiple themes are available, including several <b>holiday themed options</b>, allowing you to customize the look of the schedule to your preference or to match the season.</p>
       <i><b class="side-note">Side Note:</b> Feel free to recommend a custom theme that is not available.</i>
+	  <p class="subtitle">Auto Theme Change</p>
+	  <i>(On or Off — Off by default)</i>
+	  <p>When enabled, the color theme will automatically change to a holiday theme when the date is changed to the week that holiday occurs.</p>
+	  <p>Holidays that are included in this auto updating include:</p>
+	  <ul>
+		<li>New Year's</li>
+		<li>Memorial Day</li>
+		<li>Independence Day</li>
+		<li>Thanksgiving</li>
+		<li>Christmas</li>
+	  </ul>
+	  <p class="subtitle">Default Auto Theme</p>
+	  <p>This setting becomes available when <b>Auto Theme Change</b> is enabled.</p>
+	  <p>When <b>Auto Theme Change</b> is enabled, this option will be the color theme that the Schedule Maker defaults to when there is not a holiday found in the current week.</p>
+	  <p><b class="side-note">Important Note:</b> If you desire to change the theme when <b>Auto Theme Change</b> is enabled, you must change the theme in both the <b>Schedule Color Theme</b> and <b>Default Auto Theme</b> setting options.</p>
       <p class="subtitle">Saving Settings</p>
       <p>After selecting your preferred options, click the <b>Save</b> button.</p>
       <p>You will be prompted to confirm your selection, as saving will <b>overwrite any existing settings</b>. Select <b>Yes</b> to apply and save the new settings.</p>
@@ -585,6 +605,15 @@
         <ul>
           <li>A warning is generated if a location is not fully covered for the number of hours it is open on any day of the week.</li>
           <li><i><b class="side-note">Important Note:</b> A separate warning will appear for each affected day, if applicable.</i></li>
+        </ul>
+		<li><b>Location Scheduled on Closed Day</b></li>
+        <ul>
+          <li>A warning is generated if a location has an employee scheduled on a day the location is closed.</li>
+        </ul>
+		<li><b>Employee Full Time Requirement</b></li>
+        <ul>
+          <li>A warning is generated if an employee that is considered full time is scheduled below the minimum full time hours defined in your settings.</li>
+		  <li><i><b class="side-note">Important Note:</b> An employee is considered full time if their permitted hours equal or exceed the defined minimum full time hours in your settings.</i></li>
         </ul>
       </ul>
       <p class="subtitle">Viewing Warnings</p>
@@ -765,6 +794,11 @@
         <li>Use the <b>Up Arrow</b> or <b>Down Arrow</b> buttons to move the selected employee to the desired position in the list.</li>
         <li>Repeat this process as needed until the employee names appear in your preferred order.</li>
       </ol>
+	  <p class="subtitle">Alphabetical Order</p>
+	  <p>In the bottom right corner there is a button labeled <b>"Aa"</b>.</p>
+	  <p>Clicking this button once will sort the employees alphabetically by their first name.</p>
+	  <p>Clicking this button a second time will sort the employees alphabetically by their last name.</p>
+	  <p><b class="side-note">Side Note:</b> Someone who does not have a last name will always be sorted by their first name.</p>
       <p class="subtitle">Saving Changes</p>
       <p>Once the list reflects the desired schedule order:</p>
       <ul>
@@ -1119,6 +1153,10 @@
         <ul><li>When checked, the selected file's settings will replace the current sheet's settings.</li></ul>
         <li><b>Import District Manager</b></li>
         <ul><li>When checked, the District Manager and their schedule will also be imported from the selected sheet.</li></ul>
+		<li><b>Import Weekday Defaults</b></li>
+        <ul><li>When checked, the selected file's weekday default schedules will be imported and replace the current sheet's weekday default schedules.</li></ul>
+		<li><b>Import Scheduled Days Off</b></li>
+        <ul><li>When checked, the scheduled days off will be imported into the current sheet as long as the employees exist in the current sheet.</li></ul>
       </ul>
       <p class="subtitle">Completing the Import</p>
       <p>After making your selections:</p>
@@ -1239,6 +1277,84 @@
       <img src="images/wip.png" alt="Work in Progress">
     </div>
   </section>
+  
+  <section id="SchedulingDayOffSection" class="guide-section">
+    <button class="section-header">
+      <span class="arrow">▶</span>
+      Scheduling Future Days Off
+    </button>
+    <div class="section-content">
+      <hr>
+      <p>This feature allows you to plan and track employee days off in advance. This ensures you are reminded of upcoming time off whe building or updating schedules.</p>
+	  <p class="subtitle">Opening the Days Off Menu</p>
+	  <p>In the top left corner of the Excel sheet:</p>
+	  <ul>
+		<li>Click the button with the <b>bell icon</b>.</li>
+	  </ul>
+	  <p class="subtitle">Days Off List</p>
+	  <p>The menu contains the following:</p>
+	  <ul>
+		<li>A list box displaying all scheduled days off.</li>
+		<li>The <b>Add Day Off</b> button.</li>
+		<li>The <b>Remove Day Off</b> button.</li>
+		<li>The <b>Close</b> button.</li>
+	  </ul>
+	  <p class="subtitle">Managing Old Days Off</p>
+	  <p>If any scheduled days off are <b>more than 30 days in the past</b>, you will be prompted to remove them when opening the menu.</p>
+	  <p>You may decide whether to remove outdated entries or keep them for reference.</p>
+	  <p class="subtitle">Adding a Day Off</p>
+	  <p>To schedule a future day off:</p>
+	  <ol>
+		<li>Click the <b>Add Day Off</b> button.</li>
+		<li>Input:</li>
+		<ul><li><b>Employee Name</b></li><li><b>Date of Day Off</b></li><li><b>PTO Hours Amount</b></li></ul>
+		<li>Click <b>Add Day Off</b> to confirm.</li>
+	  </ol>
+	  <p>The day off you added will now appear in the list.</p>
+	  <i><b class="side-note">Side Note:</b> If you add a day off that falls within the current active schedule, the system will automatically detect it and you will be prompted to update the schedule accordingly.</i>
+	  <p class="subtitle">Important Rules</p>
+	  <ul>
+		<li>You cannot add a day off that is more than 30 days in the past.</li>
+		<li>You cannot add duplicate entries.</li>
+	  </ul>
+	  <p>To change PTO amount you must remove the existing entry and re-add it with the updated value.</p>
+	  <p class="subtitle">Removing a Day Off</p>
+	  <p>To remove a day off:</p>
+	  <ol>
+		<li>Select the entry from the list.</li>
+		<li>Click the <b>Remove Day Off</b> button.</li>
+		<li>Click <b>Yes</b> to confirm.</li>
+	  </ol>
+	  <p class="subtitle">How Days Off Are Applied</p>
+	  <p>Days off get applied as you change the schedule dates.</p>
+	  <p>When the week dates are updated, the Schedule Maker will check for any scheduled days off that fall within that week. If a match is found you will be reminded of the scheduled day off with a pop-up. This pop-up will ask you if you would like to mark the schedule off or not.</p>
+	  <p>If <b>Yes</b> is selected, the employee will be made off with however many PTO hours the scheduled day off was saved with.</p>
+	  <p class="subtitle">Photo Guide</p>
+      <p>Screenshots of each step are included below to help guide you through this process.</p>
+      <img src="images/wip.png" alt="Work in Progress">
+    </div>
+  </section>
+  
+  <section id="AvailableHoursSection" class="guide-section">
+    <button class="section-header">
+      <span class="arrow">▶</span>
+      Viewing Available Hours
+    </button>
+    <div class="section-content">
+      <hr>
+      <p>This feature allows you to easily view the amount of remaining hours each of your locations and employees can be scheduled.</p>
+	  <p class="subtitle">Opening the Available Hours Menu</p>
+	  <p>In the top left corner of the Excel sheet:</p>
+	  <ul>
+		<li>Click the button with the <b>hourglass icon</b>.</li>
+	  </ul>
+	  <p class="subtitle">Available Hours List</p>
+	  <p>The menu contains a locations tab and an employees tab.</p>
+	  <p>Each tab will have a list box containing all locations or employees respectively alongside how many hours the location or employee can still be scheduled.</p>
+	  <p>Locations and employees that have 0 remaining hours available to be scheduled <b>will not</b> appear in these lists.</p>
+	  <i><b class="side-note">Side Note:</b> The lists will be sorted by greatest to least amount of hours available by default.</i>
+    </div>
+  </section>
 
   <section id="updates" class="guide-section">
     <button class="section-header">
@@ -1248,6 +1364,82 @@
     <div class="section-content">
       <hr>
       <p>Click <b><a class="section-link" href="#UpdatingScheduleMakerSection">here</a></b> to learn how to update your Schedule Maker workbook.</p>
+	  <p class="subtitle">[1.1.2] Update Released 2026-06-17</p>
+	  <p><b class="side-note">### Added</b></p>
+	  <ul>
+		<b><li>Minimum Full Time Hours Setting</li></b>
+		<ul>
+			<li>Added a new setting option that allows the user to define the minimum required hours a full time employee must work to remain full time.</li>
+		</ul>
+		<b><li>Below Full Time Hours Warning</li></b>
+		<ul>
+			<li>A new warning can now populate in the warnings menu to inform the user that an employee that is considered full time is scheduled below the minimum full time hours.</li>
+		</ul>
+		<b><li>Available Hours Menu</b></li>
+		<ul>
+			<li>Added a new menu that allows the user to quickly check how many hours are available to be scheduled at each of their locations and employees.</li>
+			<li>This menu can be accessed by clicking the button with the hourglass icon located at the top left of the Excel sheet.</li>
+		</ul>
+	  </ul>
+	  <p><b class="side-note">### Changed</b></p>
+	  <ul>
+		<b><li>Employee Full Time Requirement</li></b>
+		<ul>
+			<li>Employees are now automatically considered to be full time if their permitted hours are equal to or exceed the minimum full time hours setting.</li>
+		</ul>
+		<b><li>Warning Checks</li></b>
+		<ul>
+			<li>Warning checks now also run when employees are added and when settings are updated.</li>
+		</ul>
+	  </ul>
+	  <p><b class="side-note">### Upcoming</b></p>
+	  <ul>
+		<b><li>Refined Reporting</li></b>
+		<ul>
+			<li>Refinements to exported reporting may be added in a future update, as needs are made aware.</li>
+		</ul>
+	  </ul>
+	  <p class="subtitle">[1.1.1] Update Released 2026-04-15</p>
+	  <p><b class="side-note">### Added</b></p>
+	  <ul>
+		<b><li>Schedule Days Off Reminder Feature</li></b>
+		<ul>
+			<li>Added a menu that allows you to add future scheduled days off for your employees. You will be reminded of their day off when you change to that week's dates.</li>
+		</ul>
+	  <ul>
+		<b><li>Schedule Days Off Reminder Feature</li></b>
+		<ul>
+			<li>Added a menu that allows you to add future scheduled days off for your employees. You will be reminded of their day off when you change to that week's dates.</li>
+		</ul>
+		<b><li>New Color Themes</li></b>
+		<ul>
+			<li>Added a new Patriotic theme and a New Year's theme.</li>
+		</ul>
+		<b><li>Auto Theme Update Settings</b></li>
+		<ul>
+			<li>New setting that, when enabled, will change your theme to reflect a holiday theme the week of the holiday. This is only supported for the holidays that we have off as a company.</li>
+		</ul>
+		<b><li>Alphabetical Order Button for Schedule Order.</li></b>
+		<ul>
+			<li>Added a new button on the editing schedule order screen that automatically sorts it in alphabetical order by first or last name.</li>
+		</ul>
+	</ul>
+	  <p><b class="side-note">### Improved</b></p>
+	  <ul>
+		<b><li>Import Data</li></b>
+		<ul>
+			<li>Weekday defaults and scheduled days off can now be imported from other Schedule Maker sheets as well.</li>
+		</ul>
+		<b><li>Holiday Support</li></b>
+		<ul>
+			<li>The process to automatically make employees off on a holiday has been improved and now takes significantly less time to process.</li>
+		</ul>
+	   </ul>
+	   <p><b class="side-note">### Fixed</b></p>
+		<ul>
+			<li>Fixed CHAR(10) Replacement Bug</li>
+		</ul>
+	  
       <p class="subtitle">[1.1.0] Update Released 2026-03-16</p>
 
       <p><b class="side-note">### Added</b></p>
